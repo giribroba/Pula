@@ -32,12 +32,14 @@ public class ControladorJogador : MonoBehaviour
     private void Inputs()
     {
         Limite();
-
-        //Acelerometro
-        acelerometroInput = Input.acceleration.x;
-
+#if UNITY_STANDALONE || UNITY_EDITOR
         //Teclado
         horizontalInput = Input.GetAxis("Horizontal");
+#elif UNITY_ANDROID
+         //Acelerometro
+        acelerometroInput = Input.acceleration.x;
+
+#endif
     }
 
     /// <summary>
@@ -56,9 +58,12 @@ public class ControladorJogador : MonoBehaviour
     /// </summary>
     private void hMovimento()
     {
+#if UNITY_STANDALONE || UNITY_EDITOR
+        //movimento por teclado
+        rbJogador.velocity = new Vector2(horizontalInput * velocidade, rbJogador.velocity.y);
+#elif UNITY_ANDROID
         //Movimento por acelerometro
         rbJogador.velocity = new Vector2(acelerometroInput * velocidade * 1.5f, rbJogador.velocity.y);
-        //movimento por teclado
-        //rbJogador.velocity = new Vector2(horizontalInput * velocidade, rbJogador.velocity.y);
+#endif
     }
 }
