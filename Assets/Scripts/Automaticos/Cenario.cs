@@ -5,7 +5,7 @@ using UnityEngine;
 public class Cenario : MonoBehaviour
 {
     [Header("Configurações")]
-    [SerializeField] private GameObject plataforma, camera;
+    [SerializeField] private GameObject plataforma, camera, player;
     [SerializeField] private float alturaMax, topoTela, tolerancia;
     private float aluraMinima = 1.9f;
     public float xMax;
@@ -19,6 +19,7 @@ public class Cenario : MonoBehaviour
 
     void Update()
     {
+        //BalancearPlataformas();
         CriadorPlataformas(); 
     }
 
@@ -31,7 +32,16 @@ public class Cenario : MonoBehaviour
     {
         if (ultimaPlataforma.transform.position.y < camera.transform.position.y + tolerancia)
         {
-            NovaPlataforma(new Vector2(Random.Range(-xMax, xMax), Random.Range(ultimaPlataforma.transform.position.y + aluraMinima, ultimaPlataforma.transform.position.y + alturaMax)));
+            NovaPlataforma(new Vector2(Random.Range(-xMax, xMax), Random.Range(ultimaPlataforma.transform.position.y + Random.Range(0.7f, alturaMax), ultimaPlataforma.transform.position.y + alturaMax)));
+        }
+    }
+
+    private void BalancearPlataformas()
+    {
+        if (player.transform.position.y < 200 && player.transform.position.y > 10)
+        {
+            alturaMax = player.transform.position.y * 0.0026f;
+            print(alturaMax);
         }
     }
 

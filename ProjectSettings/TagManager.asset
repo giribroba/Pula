@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Plataforma
   - Construtor
+  - Contador
+  - Altitude
   layers:
   - Default
   - TransparentFX
@@ -42,4 +44,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Plataforma
+    uniqueID: 765800685
+    locked: 0
+  - name: Player
+    uniqueID: 1463621513
     locked: 0

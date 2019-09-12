@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Plataforma : MonoBehaviour
 {
-    public enum tipoDePulo {Normal, Mola};
+    public enum tipoDePulo { Normal, Mola, Some }
 
     [Header("Configurações")]
     [SerializeField] private float forcaPuloNormal; 
@@ -18,6 +18,7 @@ public class Plataforma : MonoBehaviour
 
     void Start()
     {
+        //tipoPulo = (tipoDePulo)Random.Range(0,3);
         jogador = GameObject.FindWithTag("Player");
         construtor = GameObject.FindWithTag("Construtor");
         rbJogador = jogador.GetComponent<Rigidbody2D>();
@@ -40,6 +41,10 @@ public class Plataforma : MonoBehaviour
                     break;
                 case tipoDePulo.Mola:
                     Pulo(forcaPuloMola);
+                    break;
+                case tipoDePulo.Some:
+                    Pulo(forcaPuloNormal);
+                    this.GetComponent<Animator>().SetTrigger("Apaga");
                     break;
             }
         }
@@ -65,5 +70,10 @@ public class Plataforma : MonoBehaviour
         {
             lado = 1;
         }
+    }
+
+    private void Destroir()
+    {
+        Destroy(this.gameObject);
     }
 }

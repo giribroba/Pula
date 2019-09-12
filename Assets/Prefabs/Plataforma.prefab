@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f0dfd95b3f5f6d242a1bbd38659049ab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 884b0123071c80e4c9a472f0382c6575, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,6 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4eff3dcf08e1a4dbac3ded38781f96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  contador: {fileID: 0}
+  "pontua\xE7\xE3o": 1
 --- !u!1 &7528309977090800054
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,6 +129,7 @@ GameObject:
   - component: {fileID: 7528309977090800049}
   - component: {fileID: 7528309977090800048}
   - component: {fileID: 6780022114580334710}
+  - component: {fileID: 675450535309581813}
   m_Layer: 0
   m_Name: Plataforma
   m_TagString: Plataforma
@@ -241,3 +244,22 @@ MonoBehaviour:
   velocidadeMovel: 0.06
   tipoPulo: 0
   movel: 0
+--- !u!95 &675450535309581813
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7528309977090800054}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fcededc1af424e84dbf02839830e6749, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
