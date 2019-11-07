@@ -7,6 +7,11 @@ public class Destruidor : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        Destroy(other.gameObject);
+        if (other.tag == "Plataforma")
+            Destroy(other.gameObject);
+        else
+        {
+            Cam.seguir = false;
+        }
     }
 }

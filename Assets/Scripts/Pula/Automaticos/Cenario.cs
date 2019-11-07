@@ -14,6 +14,7 @@ public class Cenario : MonoBehaviour
 
     void Start()
     {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
         PrimeiroLayout();
     }
 

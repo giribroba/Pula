@@ -6,12 +6,14 @@ using UnityEngine.UI;
 
 public class Cano : MonoBehaviour
 {
-    [SerializeField] Text contador;
-    private GameObject diamante;
+    [SerializeField] private Sprite[] canosSprite;
     [SerializeField] private int pontuação = 1;
+    private Text contador;
+    private GameObject diamante;
     public static int Conta;
     void Start()
     {
+        this.GetComponent<SpriteRenderer>().sprite = canosSprite[Random.Range(0, canosSprite.Length)];
         contador = GameObject.FindWithTag("Contador").GetComponent<Text>();
         this.gameObject.SetActive(Random.Range(1,5) == 1);   
     }

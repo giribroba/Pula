@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Cenas/CaminhoH.unity
     guid: deac12fd2bcc5f8438baf444f702b13f
+  - enabled: 1
+    path: Assets/Cenas/Cretos.unity
+    guid: 5b0f48002101a6d4e8490e120ae36f3a
   m_configObjects: {}

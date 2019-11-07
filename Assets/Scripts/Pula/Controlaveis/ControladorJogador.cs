@@ -71,6 +71,10 @@ public class ControladorJogador : MonoBehaviour
         {
             this.transform.position = new Vector2(((this.transform.position.x > 0)? -1: 1) * (xMax - 0.2f), transform.position.y);
         }
+        if (this.transform.position.y < Camera.main.transform.position.y - 5)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MenuPricipal");
+        }
     }
 
     /// <summary>

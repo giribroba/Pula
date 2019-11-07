@@ -11,10 +11,13 @@ public class Cam : MonoBehaviour
     [Header("Configurações")]
     [SerializeField] float suavidade;
 
+    public static bool seguir;
+
     private float ySuavizada;
 
     private void Start()
     {
+        seguir = true;
         transformJogador = jogador.transform;
     }
 
@@ -25,7 +28,10 @@ public class Cam : MonoBehaviour
 
     private void SeguirJogador()
     {
-        ySuavizada = Mathf.Lerp(this.transform.position.y, transformJogador.position.y + 2, suavidade);
-        transform.position = new Vector3(this.transform.position.x, ySuavizada, this.transform.position.z);
+        if (seguir)
+        {
+            ySuavizada = Mathf.Lerp(this.transform.position.y, transformJogador.position.y + 2, suavidade);
+            transform.position = new Vector3(this.transform.position.x, ySuavizada, this.transform.position.z);
+        }
     }
 }
