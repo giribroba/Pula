@@ -102,6 +102,7 @@ public class ControladorJogador : MonoBehaviour
         if (rbJogador.velocity.y > 0 && transform.position.y > altitudeRecorde)
         {
             destruidor.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - 6);
+            
         }
     }
 }
