@@ -11,6 +11,7 @@ public class ControladorJogador : MonoBehaviour
     private float horizontalInput;
 
     [Header("UI")]
+    [SerializeField] private GameObject telinhas;
     [SerializeField] private Text altitudeUI;
 
     [Header("Destruidor")]
@@ -23,6 +24,7 @@ public class ControladorJogador : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         animJogador = this.GetComponent<Animator>();
         rbJogador = this.GetComponent<Rigidbody2D>();
     }
@@ -71,9 +73,9 @@ public class ControladorJogador : MonoBehaviour
         {
             this.transform.position = new Vector2(((this.transform.position.x > 0)? -1: 1) * (xMax - 0.2f), transform.position.y);
         }
-        if (this.transform.position.y < Camera.main.transform.position.y - 5)
+        if (this.transform.position.y < Camera.main.transform.position.y - 6)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("MenuPricipal");
+            telinhas.GetComponent<TelinhasScript>().StartCoroutine("Desce", "over");
         }
     }
 
