@@ -19,6 +19,7 @@ public class Cam : MonoBehaviour
     {
         seguir = true;
         transformJogador = jogador.transform;
+        this.GetComponent<AudioSource>().mute = MenuInicial.mutoGeral;
     }
 
     private void FixedUpdate()
